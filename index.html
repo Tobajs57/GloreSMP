@@ -104,40 +104,42 @@
 
   <!-- ==================== HOME PAGE ==================== -->
   <div id="page-home" class="page-view active pt-20">
-    <!-- Hero Section -->
-    <header class="relative pt-20 pb-28 md:pt-32 md:pb-36 w-full px-6 md:px-16 overflow-hidden">
-      <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- Hero Section s logem uprostřed nahoře a copy ip přímo pod tím -->
+    <header class="relative pt-16 pb-28 md:pt-24 md:pb-36 w-full px-6 md:px-16 overflow-hidden">
+      <div class="w-full max-w-4xl mx-auto flex flex-col items-center text-center space-y-8">
         
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <!-- Logo uprostřed nahoře -->
+        <div class="relative">
+          <img src="logo.png" alt="GloreSMP Logo" class="w-32 sm:w-40 lg:w-48 h-auto object-contain animate-float drop-shadow-[0_20px_40px_rgba(255,85,0,0.6)]">
+        </div>
+
+        <!-- Nadpis a stav -->
+        <div class="space-y-4 max-w-2xl">
           <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-fireRed/20 border border-fireRed/50 text-fireYellow text-xs font-bold tracking-wide uppercase shadow-lg shadow-fireRed/10">
             <span class="w-2 h-2 rounded-full bg-fireYellow animate-ping"></span>
             Server Online • No Lag
           </div>
 
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
             Survival <span class="bg-gradient-to-r from-fireYellow via-fireOrange to-fireRed bg-clip-text text-transparent">Economy</span>
           </h1>
 
-          <p class="text-lg text-orange-200/70 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+          <p class="text-base sm:text-lg text-orange-200/70 font-normal leading-relaxed">
             Step into the ultimate hardcore sandbox environment. Form indestructible alliances, manipulate high-tier player markets, build colossal fortresses, and rise to absolute supremacy.
           </p>
-
-          <!-- IP Copy Widget Card -->
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <div class="w-full sm:w-auto flex items-center justify-between gap-6 fire-box px-6 py-4 rounded-2xl">
-              <div class="text-left">
-                <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase">Server Address</div>
-                <div id="server-ip" class="text-base font-mono font-bold text-white">play.gloresmp.example</div>
-              </div>
-              <button id="copy-ip-btn" type="button" class="bg-fireOrange/20 hover:bg-gradient-to-r hover:from-fireYellow hover:via-fireOrange hover:to-fireRed text-fireYellow hover:text-black font-mono font-bold text-xs uppercase tracking-wider px-4.5 py-3 rounded-xl border border-fireOrange/50 transition-all duration-200 shadow-md">
-                Copy IP
-              </button>
-            </div>
-          </div>
         </div>
 
-        <div class="lg:col-span-5 flex justify-center relative">
-          <img src="logo.png" alt="GloreSMP Logo" class="w-72 sm:w-80 lg:w-96 h-auto object-contain animate-float drop-shadow-[0_20px_40px_rgba(255,85,0,0.5)]">
+        <!-- IP Copy Widget Card přímo pod logem a textem -->
+        <div class="w-full max-w-md flex flex-col items-center pt-2">
+          <div class="w-full flex items-center justify-between gap-6 fire-box px-6 py-4 rounded-2xl shadow-xl">
+            <div class="text-left">
+              <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase">Server Address</div>
+              <div id="server-ip" class="text-base font-mono font-bold text-white">play.gloresmp.example</div>
+            </div>
+            <button id="copy-ip-btn" type="button" class="bg-fireOrange/20 hover:bg-gradient-to-r hover:from-fireYellow hover:via-fireOrange hover:to-fireRed text-fireYellow hover:text-black font-mono font-bold text-xs uppercase tracking-wider px-4.5 py-3 rounded-xl border border-fireOrange/50 transition-all duration-200 shadow-md">
+              Copy IP
+            </button>
+          </div>
         </div>
 
       </div>
@@ -243,7 +245,7 @@
     </main>
   </div>
 
-  <!-- ==================== HOW TO JOIN PAGE (Logo nahoře, pod ním IP box) ==================== -->
+  <!-- ==================== HOW TO JOIN PAGE ==================== -->
   <div id="page-join" class="page-view pt-32 pb-24 w-full px-6 flex-grow flex items-center justify-center">
     <div class="w-full max-w-xl mx-auto fire-box p-8 sm:p-12 rounded-3xl text-center space-y-8 shadow-2xl relative overflow-hidden flex flex-col items-center">
       
@@ -261,41 +263,41 @@
           <span class="w-1.5 h-1.5 rounded-full bg-fireYellow animate-ping"></span>
           Java & Bedrock Edition
         </div>
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Připoj se na GloreSMP</h1>
-        <p class="text-orange-200/70 text-sm">Zkopíruj si adresu serveru, zapni Minecraft a vyraz do akce!</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">How to Join GloreSMP</h1>
+        <p class="text-orange-200/70 text-sm">Copy the server address, launch Minecraft and jump into action!</p>
       </div>
 
-      <!-- IP Box s Copy tlačítkem (hned pod logem a textem) -->
+      <!-- IP Box s Copy tlačítkem (anglicky) -->
       <div class="bg-pitchBlack/80 border border-fireOrange/40 p-4 sm:p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-inner w-full relative z-10">
         <div class="text-center sm:text-left">
-          <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase font-semibold">Server IP Adresa</div>
+          <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase font-semibold">Server IP Address</div>
           <div id="server-ip-join" class="text-lg sm:text-xl font-mono font-bold text-white tracking-wide">play.gloresmp.example</div>
         </div>
         <button id="copy-ip-btn-join" type="button" class="w-full sm:w-auto bg-fireOrange/20 hover:bg-gradient-to-r hover:from-fireYellow hover:via-fireOrange hover:to-fireRed text-fireYellow hover:text-black font-mono font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl border border-fireOrange/50 transition-all duration-200 shadow-md whitespace-nowrap">
-          Zkopírovat IP
+          Copy IP
         </button>
       </div>
 
-      <!-- Rychlé pokyny v bodech -->
+      <!-- Rychlé pokyny v bodech (anglicky) -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left pt-2 w-full relative z-10">
         <div class="bg-pitchBlack/50 p-4 rounded-xl border border-fireOrange/20 space-y-1">
-          <div class="text-fireYellow font-mono font-bold text-xs">1. Spusť</div>
-          <p class="text-orange-200/60 text-xs leading-relaxed">Zapni hru (verze 1.20+)</p>
+          <div class="text-fireYellow font-mono font-bold text-xs">1. Launch</div>
+          <p class="text-orange-200/60 text-xs leading-relaxed">Open game (version 1.20+)</p>
         </div>
         <div class="bg-pitchBlack/50 p-4 rounded-xl border border-fireOrange/20 space-y-1">
           <div class="text-fireYellow font-mono font-bold text-xs">2. Multiplayer</div>
-          <p class="text-orange-200/60 text-xs leading-relaxed">Klikni na "Přidat server"</p>
+          <p class="text-orange-200/60 text-xs leading-relaxed">Click "Add Server"</p>
         </div>
         <div class="bg-pitchBlack/50 p-4 rounded-xl border border-fireOrange/20 space-y-1">
-          <div class="text-fireYellow font-mono font-bold text-xs">3. Hraj</div>
-          <p class="text-orange-200/60 text-xs leading-relaxed">Vlož IP a připoj se</p>
+          <div class="text-fireYellow font-mono font-bold text-xs">3. Play</div>
+          <p class="text-orange-200/60 text-xs leading-relaxed">Paste IP & connect</p>
         </div>
       </div>
 
       <!-- Tlačítko zpět domů -->
       <div class="relative z-10 pt-2">
         <a href="#" onclick="switchPage('home'); return false;" class="text-xs font-mono uppercase tracking-widest text-orange-200/50 hover:text-fireYellow transition duration-200 underline underline-offset-4">
-          ← Zpět na hlavního průvodce
+          ← Back to main guide
         </a>
       </div>
 
@@ -358,14 +360,14 @@
         try {
           await navigator.clipboard.writeText(ipText);
           const originalText = copyBtnJoin.textContent;
-          copyBtnJoin.textContent = 'ZKOPÍROVÁNO!';
+          copyBtnJoin.textContent = 'COPIED!';
           copyBtnJoin.classList.add('ultimate-copied');
           setTimeout(() => {
             copyBtnJoin.textContent = originalText;
             copyBtnJoin.classList.remove('ultimate-copied');
           }, 1600);
         } catch (e) {
-          copyBtnJoin.textContent = 'CHYBA';
+          copyBtnJoin.textContent = 'ERROR';
         }
       });
     }
