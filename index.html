@@ -113,8 +113,21 @@
           <img src="logo.png" alt="GloreSMP Logo" class="w-32 sm:w-40 lg:w-48 h-auto object-contain animate-float drop-shadow-[0_20px_40px_rgba(255,85,0,0.6)]">
         </div>
 
+        <!-- IP Copy Widget Card přímo pod logem -->
+        <div class="w-full max-w-md flex flex-col items-center">
+          <div class="w-full flex items-center justify-between gap-6 fire-box px-6 py-4 rounded-2xl shadow-xl">
+            <div class="text-left">
+              <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase">Server Address</div>
+              <div id="server-ip" class="text-sm sm:text-base font-mono font-bold text-white">GloreSMP.bagelhosting.net</div>
+            </div>
+            <button id="copy-ip-btn" type="button" class="bg-fireOrange/20 hover:bg-gradient-to-r hover:from-fireYellow hover:via-fireOrange hover:to-fireRed text-fireYellow hover:text-black font-mono font-bold text-xs uppercase tracking-wider px-4.5 py-3 rounded-xl border border-fireOrange/50 transition-all duration-200 shadow-md">
+              Copy IP
+            </button>
+          </div>
+        </div>
+
         <!-- Nadpis a stav -->
-        <div class="space-y-4 max-w-2xl">
+        <div class="space-y-4 max-w-2xl pt-2">
           <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-fireRed/20 border border-fireRed/50 text-fireYellow text-xs font-bold tracking-wide uppercase shadow-lg shadow-fireRed/10">
             <span class="w-2 h-2 rounded-full bg-fireYellow animate-ping"></span>
             Server Online • No Lag
@@ -127,19 +140,6 @@
           <p class="text-base sm:text-lg text-orange-200/70 font-normal leading-relaxed">
             Step into the ultimate hardcore sandbox environment. Form indestructible alliances, manipulate high-tier player markets, build colossal fortresses, and rise to absolute supremacy.
           </p>
-        </div>
-
-        <!-- IP Copy Widget Card přímo pod logem a textem -->
-        <div class="w-full max-w-md flex flex-col items-center pt-2">
-          <div class="w-full flex items-center justify-between gap-6 fire-box px-6 py-4 rounded-2xl shadow-xl">
-            <div class="text-left">
-              <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase">Server Address</div>
-              <div id="server-ip" class="text-base font-mono font-bold text-white">play.gloresmp.example</div>
-            </div>
-            <button id="copy-ip-btn" type="button" class="bg-fireOrange/20 hover:bg-gradient-to-r hover:from-fireYellow hover:via-fireOrange hover:to-fireRed text-fireYellow hover:text-black font-mono font-bold text-xs uppercase tracking-wider px-4.5 py-3 rounded-xl border border-fireOrange/50 transition-all duration-200 shadow-md">
-              Copy IP
-            </button>
-          </div>
         </div>
 
       </div>
@@ -271,7 +271,7 @@
       <div class="bg-pitchBlack/80 border border-fireOrange/40 p-4 sm:p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-inner w-full relative z-10">
         <div class="text-center sm:text-left">
           <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase font-semibold">Server IP Address</div>
-          <div id="server-ip-join" class="text-lg sm:text-xl font-mono font-bold text-white tracking-wide">play.gloresmp.example</div>
+          <div id="server-ip-join" class="text-sm sm:text-base font-mono font-bold text-white tracking-wide">GloreSMP.bagelhosting.net</div>
         </div>
         <button id="copy-ip-btn-join" type="button" class="w-full sm:w-auto bg-fireOrange/20 hover:bg-gradient-to-r hover:from-fireYellow hover:via-fireOrange hover:to-fireRed text-fireYellow hover:text-black font-mono font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl border border-fireOrange/50 transition-all duration-200 shadow-md whitespace-nowrap">
           Copy IP
@@ -332,7 +332,7 @@
       }
     }
 
-    const ipText = 'play.gloresmp.example';
+    const ipText = 'GloreSMP.bagelhosting.net';
     
     // Copy button on Home
     const copyBtn = document.getElementById('copy-ip-btn');
