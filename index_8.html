@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:           #191006;
-    --bg-2:         #251708;
-    --bg-3:         #34210c;
-    --cream:        #fff2e0;
-    --cream-dim:    #e8cba3;
-    --orange:       #ff8a3d;
-    --orange-2:     #ff5e1a;
-    --yellow:       #ffcc33;
-    --ember:        #ff3d3d;
-    --line:         rgba(255,242,224,0.14);
+    --bg:         #191006;
+    --bg-2:       #251708;
+    --bg-3:       #34210c;
+    --cream:      #fff2e0;
+    --cream-dim:  #e8cba3;
+    --orange:     #ff8a3d;
+    --orange-2:   #ff5e1a;
+    --yellow:     #ffcc33;
+    --ember:      #ff3d3d;
+    --line:       rgba(255,242,224,0.14);
     --shadow-hard:  6px 6px 0 rgba(0,0,0,0.4);
 
     --font-display: 'Baloo 2', system-ui, sans-serif;
@@ -179,7 +179,6 @@
     border-color:var(--yellow);
   }
 
-  /* pixel ore/ingot icon */
   .hero-art{ width:320px; margin-left:auto; }
   .hero-logo{
     width:100%;
@@ -278,13 +277,6 @@
     display:flex; align-items:center; justify-content:center;
     font-size:0.8rem; flex-shrink:0;
   }
-  .rules-note{
-    margin-top:22px;
-    padding-top:18px;
-    border-top:1px dashed var(--line);
-    font-size:0.88rem;
-    color:var(--cream-dim);
-  }
 
   /* ---------- CONNECT ---------- */
   .steps{ display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:16px; }
@@ -325,11 +317,11 @@
 
 <nav>
   <div class="wrap">
-    <a href="#top" class="brand"><img src="logo.png" alt="GloreSMP logo" class="brand-logo"></a>
+    <a href="#top" class="brand"><img src="logo.png" alt="GloreSMP logo" class="brand-logo">GloreSMP</a>
     <div class="navlinks">
-      <a href="#features">Features</a>
-      <a href="#rules">Rules</a>
-      <a href="#connect">How to Join</a>
+      <a href="#features">Vlastnosti</a>
+      <a href="#rules">Pravidla</a>
+      <a href="#connect">Jak se připojit</a>
     </div>
   </div>
 </nav>
@@ -337,24 +329,24 @@
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Server is online</span>
-      <h1>Survival economy.</h1>
+      <span class="eyebrow">Server je online</span>
+      <h1>Survival ekonomika.</h1>
       <p class="lede">
-        GloreSMP is a player-driven economy server — auctions, shops, and raiding.
-        Build up, defend what's yours, and climb the leaderboards.
+        GloreSMP je survival server s hráčskou ekonomikou — aukce, obchody a raidování.
+        Vybuduj si své zázemí, braň to, co je tvoje, a vyšplhej na žebříčky.
       </p>
 
       <div class="ip-ticket">
         <div>
-          <div class="label">Server IP address</div>
-          <div class="value" id="server-ip">play.gloresmp.example</div>
+          <div class="label">IP adresa serveru</div>
+          <div class="value" id="server-ip">play.gloresmp.cz</div>
         </div>
-        <button class="copy-btn" id="copy-ip-btn" type="button">Copy</button>
+        <button class="copy-btn" id="copy-ip-btn" type="button">Kopírovat</button>
       </div>
 
       <div class="hero-actions">
-        <a href="#connect" class="btn btn-primary">How to Join</a>
-        <a href="#rules" class="btn btn-ghost">Read the Rules</a>
+        <a href="#connect" class="btn btn-primary">Jak se připojit</a>
+        <a href="#rules" class="btn btn-ghost">Přečíst pravidla</a>
       </div>
     </div>
 
@@ -369,41 +361,41 @@
   <section class="section" id="features">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">What's on offer</div>
-        <h2>Features</h2>
-        <p class="section-desc">A full economy system — no waiting, no empty servers.</p>
+        <div class="kicker">Co nabízíme</div>
+        <h2>Vlastnosti</h2>
+        <p class="section-desc">Propracovaný ekonomický systém a aktivní komunita.</p>
       </div>
 
       <div class="menu-board">
         <div class="menu-item">
           <div class="icon">💰</div>
-          <h3>Auction House</h3>
-          <p>Sell rare items to other players and track prices in real time.</p>
+          <h3>Aukční síň</h3>
+          <p>Prodávej vzácné předměty ostatním hráčům a sleduj ceny v reálném čase.</p>
         </div>
         <div class="menu-item">
           <div class="icon">🏪</div>
-          <h3>Shops & Orders</h3>
-          <p>Set up your own shop or place an order for what you need to buy.</p>
+          <h3>Obchody & Zakázky</h3>
+          <p>Založ si vlastní hráčský obchod nebo vytvoř poptávku na to, co zrovna potřebuješ.</p>
         </div>
         <div class="menu-item">
           <div class="icon">🧭</div>
-          <h3>RTP & Teleports</h3>
-          <p>Random-teleport into untouched wilderness whenever you want a fresh start.</p>
+          <h3>RTP & Teleporty</h3>
+          <p>Náhodný teleport do nedomovské divočiny, kdykoliv zatoužíš po novém začátku.</p>
         </div>
         <div class="menu-item">
           <div class="icon">🏆</div>
-          <h3>Leaderboards</h3>
-          <p>Compete for the top spots in wealth, killstreaks, and resource gathering.</p>
+          <h3>Žebříčky</h3>
+          <p>Soutěž o přední příčky v bohatství, sériích zabití a vytěžených surovinách.</p>
         </div>
         <div class="menu-item">
           <div class="icon">🤝</div>
-          <h3>Friends & Teams</h3>
-          <p>Team up with your crew, build a base together, and defend your territory.</p>
+          <h3>Týmy</h3>
+          <p>Spoj se s kamarády, postavte si společnou základnu a braňte své území.</p>
         </div>
         <div class="menu-item">
           <div class="icon">🏠</div>
-          <h3>Homes</h3>
-          <p>Set multiple homes and teleport between them with a single command.</p>
+          <h3>Domovy</h3>
+          <p>Nastav si více domovů a teleportuj se mezi nimi pomocí jednoduchého příkazu.</p>
         </div>
       </div>
     </div>
@@ -412,21 +404,21 @@
   <section class="section" id="rules">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">Before you jump in</div>
-        <h2>Server Rules</h2>
-        <p class="section-desc">A lot of things that would get you banned on a normal server are just part of the game here.</p>
+        <div class="kicker">Než se do toho pustíš</div>
+        <h2>Pravidla serveru</h2>
+        <p class="section-desc">Mnoho věcí, za které bys dostal ban na obyčejném serveru, je tady součástí hry.</p>
       </div>
 
       <div class="board">
         <ul class="rules-list">
-          <li><span class="num">1</span>Hacked clients, X-ray, and any form of cheating result in a permanent ban.</li>
-          <li><span class="num">2</span>Exploiting duplication glitches or other bugs for profit is bannable — report them instead.</li>
-          <li><span class="num">3</span>Real-money trading of items, currency, or accounts outside the official store is a permanent ban.</li>
-          <li><span class="num">4</span>Scamming other players in trades is allowed — verify every deal yourself before you commit to it.</li>
-          <li><span class="num">5</span>Raiding, base-breaking, and PvP outside protected spawn areas are normal gameplay, not griefing.</li>
-          <li><span class="num">6</span>Bots and alt accounts used to automate farming or gain an unfair edge are not allowed.</li>
-          <li><span class="num">7</span>Market manipulation — auction flipping, bulk buying and reselling — is a legitimate part of the economy.</li>
-          <li><span class="num">8</span>Hate speech, doxxing, and harassment are not tolerated and result in an immediate ban.</li>
+          <li><span class="num">1</span>Hacked clienty, X-ray a jakékoliv formy podvádění vedou k trvalému banu.</li>
+          <li><span class="num">2</span>Zneužívání duplicačních glitchů nebo bugů pro zisk je trestané — raději je nahlaste.</li>
+          <li><span class="num">3</span>Reálný obchod (za peníze) s itemy, měnou nebo účty mimo oficiální store je zakázán.</li>
+          <li><span class="num">4</span>Okrádání hráčů při obchodech je povoleno — si sám zodpovědný za to, s čím obchoduješ.</li>
+          <li><span class="num">5</span>Raiding, ničování záseků a PvP mimo chráněný spawn jsou normální součástí hry.</li>
+          <li><span class="num">6</span>Botové a vedlejší účty (alt účty) k automatizaci farmení nejsou povoleny.</li>
+          <li><span class="num">7</span>Manipulace s trhem — přeprodávání a hromadné nákupy — je legitimní součástí ekonomiky.</li>
+          <li><span class="num">8</span>Nenávistné projevy (hate speech), doxxing a obtěžování se netolerují a vedou k okamžitému banu.</li>
         </ul>
       </div>
     </div>
@@ -435,30 +427,30 @@
   <section class="section" id="connect">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">Quick start</div>
-        <h2>How to Join</h2>
+        <div class="kicker">Rychlý start</div>
+        <h2>Jak se připojit</h2>
       </div>
 
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
-          <h4>Open Minecraft</h4>
-          <p>Launch Java Edition, recommended version: latest release.</p>
+          <h4>Spusť Minecraft</h4>
+          <p>Zapni Java Edici, doporučená verze: nejnovější aktualizace.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h4>Multiplayer → Add Server</h4>
-          <p>Click "Add Server" in the multiplayer list.</p>
+          <h4>Multiplayer → Přidat server</h4>
+          <p>V seznamu serverů klikni na tlačítko "Přidat server".</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <h4>Enter the IP Address</h4>
-          <p>Type <code id="server-ip-2">play.gloresmp.example</code> as the server address.</p>
+          <h4>Zadej IP adresu</h4>
+          <p>Do kolonky adresy serveru vepiš <code id="server-ip-2">play.gloresmp.cz</code>.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
-          <h4>Connect and Play</h4>
-          <p>Save, double-click the server, and welcome to GloreSMP!</p>
+          <h4>Připoj se a hraj</h4>
+          <p>Ulož server, dvakrát na něj klikni a vítej na GloreSMP!</p>
         </div>
       </div>
     </div>
@@ -468,11 +460,11 @@
 
 <footer>
   <div class="wrap footer-row">
-    <div class="footer-note">© 2026 GloreSMP. Not affiliated with Mojang/Microsoft.</div>
+    <div class="footer-note">© 2026 GloreSMP. Není oficiálně spojeno s Mojang/Microsoft.</div>
     <div class="footer-links">
-      <a href="#">Discord</a>
-      <a href="#">Store</a>
-      <a href="#">Rules</a>
+      <a href="https://discord.gg/tvrzenyodkaz" target="_blank">Discord</a>
+      <a href="#connect">Store</a>
+      <a href="#rules">Pravidla</a>
     </div>
   </div>
 </footer>
@@ -485,10 +477,10 @@
     try {
       await navigator.clipboard.writeText(ip);
       const original = btn.textContent;
-      btn.textContent = 'Copied!';
+      btn.textContent = 'Zkopírováno!';
       btn.classList.add('copied');
       ticket.classList.remove('copied');
-      void ticket.offsetWidth; // restart animation if clicked again quickly
+      void ticket.offsetWidth; 
       ticket.classList.add('copied');
       setTimeout(() => {
         btn.textContent = original;
@@ -496,7 +488,7 @@
         ticket.classList.remove('copied');
       }, 1600);
     } catch (e) {
-      btn.textContent = 'Copy manually: ' + ip;
+      btn.textContent = 'Kopíruj ručně: ' + ip;
     }
   });
 </script>
