@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GloreSMP — Elite Survival Economy</title>
+<title>GloreSMP — Survival Economy</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,31 +17,19 @@
         colors: {
           darkBg: '#040406',
           surface: '#09090e',
-          surfaceAlt: '#101018',
           accent: '#ff6b00',
-          accentGlow: '#ff8833',
         },
         fontFamily: {
           sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           mono: ['"JetBrains Mono"', 'monospace'],
         },
         animation: {
-          'float': 'float 7s ease-in-out infinite',
-          'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
-          'float-reverse': 'floatReverse 8s ease-in-out infinite',
+          'float': 'float 6s ease-in-out infinite',
         },
         keyframes: {
           float: {
-            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-            '50%': { transform: 'translateY(-14px) rotate(1deg)' },
-          },
-          floatReverse: {
-            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-            '50%': { transform: 'translateY(14px) rotate(-1deg)' },
-          },
-          pulseGlow: {
-            '0%, 100%': { opacity: '0.4' },
-            '50%': { opacity: '0.8' },
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-10px)' },
           }
         }
       }
@@ -49,58 +37,32 @@
   }
 </script>
 <style>
-  .glass-ultra {
-    background: linear-gradient(135deg, rgba(16, 16, 24, 0.7) 0%, rgba(9, 9, 14, 0.85) 100%);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  /* Optimalizováno pro maximální plynulost bez náročných blurů */
+  .glass-fast {
+    background: rgba(12, 12, 18, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
-  .glass-card-supreme {
-    background: linear-gradient(145deg, rgba(20, 20, 32, 0.4) 0%, rgba(10, 10, 16, 0.8) 100%);
-    backdrop-filter: blur(16px);
+  .card-fast {
+    background: rgba(16, 16, 24, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: border-color 0.2s ease, transform 0.2s ease;
   }
-  .glass-card-supreme:hover {
-    border-color: rgba(255, 107, 0, 0.5);
-    box-shadow: 0 25px 50px -12px rgba(255, 107, 0, 0.25), 0 0 30px rgba(255, 107, 0, 0.1);
-    transform: translateY(-8px) scale(1.01);
-  }
-  .mesh-gradient {
-    background-image: 
-      radial-gradient(at 0% 0%, rgba(255, 107, 0, 0.12) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
-      radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.06) 0px, transparent 50%);
-  }
-  .cyber-grid {
-    background-size: 40px 40px;
-    background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  }
-  .text-glow {
-    text-shadow: 0 0 35px rgba(255, 107, 0, 0.4);
+  .card-fast:hover {
+    border-color: rgba(255, 107, 0, 0.4);
+    transform: translateY(-4px);
   }
 </style>
 </head>
-<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-accent selection:text-white min-h-screen overflow-x-hidden cyber-grid mesh-gradient">
-
-  <!-- Dynamic Ambient Lighting Orbs -->
-  <div class="absolute top-[-5%] left-[20%] w-[600px] h-[600px] bg-accent/15 rounded-full blur-[120px] animate-pulse-glow pointer-events-none z-0"></div>
-  <div class="absolute top-[35%] right-[-5%] w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px] animate-pulse-glow pointer-events-none z-0" style="animation-delay: 1.5s;"></div>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-accent selection:text-white min-h-screen overflow-x-hidden">
 
   <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass-ultra border-b border-white/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-fast border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3.5 group">
-        <div class="relative">
-          <div class="absolute -inset-2 bg-gradient-to-r from-accent to-amber-500 rounded-2xl blur-md opacity-50 group-hover:opacity-100 transition duration-500"></div>
-          <img src="logo.png" alt="GloreSMP Logo" class="relative h-12 w-12 object-contain rounded-xl bg-surface p-1 border border-white/10">
-        </div>
+        <img src="logo.png" alt="GloreSMP Logo" class="h-11 w-11 object-contain rounded-xl bg-surface p-1 border border-white/10">
         <div class="flex flex-col">
-          <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">GloreSMP</span>
-          <span class="text-[10px] font-mono tracking-widest text-accent uppercase font-bold">Supreme Network</span>
+          <span class="font-extrabold text-lg tracking-tight text-white">GloreSMP</span>
+          <span class="text-[10px] font-mono tracking-widest text-accent uppercase font-bold">Survival Economy</span>
         </div>
       </a>
 
@@ -111,7 +73,7 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <a href="#connect" class="inline-flex items-center justify-center font-bold text-xs uppercase tracking-wider bg-accent/10 border border-accent/40 text-accent px-5 py-2.5 rounded-xl hover:bg-accent hover:text-white transition-all duration-300 shadow-xl shadow-accent/10">
+        <a href="#connect" class="inline-flex items-center justify-center font-bold text-xs uppercase tracking-wider bg-accent/10 border border-accent/40 text-accent px-5 py-2.5 rounded-xl hover:bg-accent hover:text-white transition-all duration-200">
           Play Now
         </a>
       </div>
@@ -119,32 +81,31 @@
   </nav>
 
   <!-- Hero Section -->
-  <header id="top" class="relative pt-40 pb-28 md:pt-52 md:pb-36 overflow-hidden z-10">
+  <header id="top" class="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
-      <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-        <div class="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-bold tracking-wide uppercase shadow-lg shadow-emerald-500/5">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-          Season Active • Zero Lag Experience
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-bold tracking-wide uppercase">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          Server Online • No Lag
         </div>
 
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.06]">
-          Redefine Your <br>
-          <span class="bg-gradient-to-r from-accent via-amber-500 to-yellow-400 bg-clip-text text-transparent text-glow">Survival Legacy</span>
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08]">
+          Survival Economy
         </h1>
 
-        <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
           Step into the ultimate hardcore sandbox environment. Form indestructible alliances, manipulate high-tier player markets, build colossal fortresses, and rise to absolute supremacy.
         </p>
 
         <!-- IP Copy Widget Card -->
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-          <div class="w-full sm:w-auto flex items-center justify-between gap-6 glass-ultra px-6 py-4 rounded-2xl border-white/10 shadow-2xl">
+          <div class="w-full sm:w-auto flex items-center justify-between gap-6 glass-fast px-6 py-4 rounded-2xl border-white/10">
             <div class="text-left">
               <div class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Server Address</div>
               <div id="server-ip" class="text-base font-mono font-bold text-accent">play.gloresmp.example</div>
             </div>
-            <button id="copy-ip-btn" type="button" class="bg-accent/20 hover:bg-accent text-accent hover:text-white font-mono font-bold text-xs uppercase tracking-wider px-4.5 py-3 rounded-xl border border-accent/40 transition-all duration-200 shadow-md">
+            <button id="copy-ip-btn" type="button" class="bg-accent/20 hover:bg-accent text-accent hover:text-white font-mono font-bold text-xs uppercase tracking-wider px-4.5 py-3 rounded-xl border border-accent/40 transition-all duration-200">
               Copy IP
             </button>
           </div>
@@ -152,64 +113,57 @@
       </div>
 
       <div class="lg:col-span-5 flex justify-center relative">
-        <div class="absolute inset-0 bg-gradient-to-tr from-accent/30 to-amber-500/20 rounded-full blur-3xl opacity-70 animate-pulse-glow"></div>
-        <img src="logo.png" alt="GloreSMP 3D Logo" class="relative w-72 sm:w-80 lg:w-[420px] h-auto object-contain animate-float drop-shadow-[0_30px_70px_rgba(255,107,0,0.4)]">
+        <img src="logo.png" alt="GloreSMP Logo" class="w-72 sm:w-80 lg:w-96 h-auto object-contain animate-float">
       </div>
 
     </div>
   </header>
 
   <!-- Main Container -->
-  <main class="space-y-40 pb-32 relative z-10">
+  <main class="space-y-32 pb-24">
 
     <!-- Features Section -->
     <section id="features" class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
-        <span class="text-xs font-mono tracking-widest text-accent uppercase font-bold">Elite Architecture</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Core Mechanics</h2>
-        <p class="text-slate-400">Engineered with precision for peak performance, extreme freedom, and absolute competitive balance.</p>
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono tracking-widest text-accent uppercase font-bold">Features</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Core Mechanics</h2>
+        <p class="text-slate-400">Engineered with precision for peak performance and absolute competitive balance.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Feature 1 -->
-        <div class="glass-card-supreme p-8 rounded-3xl space-y-4 relative overflow-hidden group">
-          <div class="absolute -right-10 -top-10 w-40 h-40 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition duration-500"></div>
-          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition duration-300">💰</div>
+        <div class="card-fast p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl">💰</div>
           <h3 class="text-xl font-bold">Auction House</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Trade rare collectibles safely and monitor live market valuations in real-time liquidity pools.</p>
         </div>
         <!-- Feature 2 -->
-        <div class="glass-card-supreme p-8 rounded-3xl space-y-4 relative overflow-hidden group">
-          <div class="absolute -right-10 -top-10 w-40 h-40 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition duration-500"></div>
-          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition duration-300">🏪</div>
+        <div class="card-fast p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl">🏪</div>
           <h3 class="text-xl font-bold">Shops & Orders</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Establish your corporate footprint with specialized player-run storefronts and direct contracts.</p>
         </div>
         <!-- Feature 3 -->
-        <div class="glass-card-supreme p-8 rounded-3xl space-y-4 relative overflow-hidden group">
-          <div class="absolute -right-10 -top-10 w-40 h-40 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition duration-500"></div>
-          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition duration-300">🧭</div>
+        <div class="card-fast p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl">🧭</div>
           <h3 class="text-xl font-bold">RTP & Teleports</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Instantly escape crowded zones into completely untouched wilderness with random teleport systems.</p>
         </div>
         <!-- Feature 4 -->
-        <div class="glass-card-supreme p-8 rounded-3xl space-y-4 relative overflow-hidden group">
-          <div class="absolute -right-10 -top-10 w-40 h-40 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition duration-500"></div>
-          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition duration-300">🏆</div>
+        <div class="card-fast p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl">🏆</div>
           <h3 class="text-xl font-bold">Global Leaderboards</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Compete across net worth, combat statistics, resource acquisition, and prestige milestones.</p>
         </div>
         <!-- Feature 5 -->
-        <div class="glass-card-supreme p-8 rounded-3xl space-y-4 relative overflow-hidden group">
-          <div class="absolute -right-10 -top-10 w-40 h-40 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition duration-500"></div>
-          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition duration-300">🤝</div>
+        <div class="card-fast p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl">🤝</div>
           <h3 class="text-xl font-bold">Factions & Teams</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Forge powerful alliances, construct massive shared fortresses, and defend your territory as a crew.</p>
         </div>
         <!-- Feature 6 -->
-        <div class="glass-card-supreme p-8 rounded-3xl space-y-4 relative overflow-hidden group">
-          <div class="absolute -right-10 -top-10 w-40 h-40 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition duration-500"></div>
-          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition duration-300">🏠</div>
+        <div class="card-fast p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-2xl">🏠</div>
           <h3 class="text-xl font-bold">Advanced Homes</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Configure multiple secure personal home points and navigate your property network instantly.</p>
         </div>
@@ -218,46 +172,44 @@
 
     <!-- Rules Section -->
     <section id="rules" class="max-w-5xl mx-auto px-6">
-      <div class="glass-ultra p-8 sm:p-14 rounded-3xl border border-white/10 relative overflow-hidden shadow-2xl">
-        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-accent/15 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div class="mb-12 space-y-3">
+      <div class="glass-fast p-8 sm:p-12 rounded-3xl border border-white/10">
+        <div class="mb-10 space-y-2">
           <span class="text-xs font-mono tracking-widest text-accent uppercase font-bold">Clear Code</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold">Server Rules</h2>
-          <p class="text-slate-400 text-sm">Essential boundaries to keep the hardcore economy competitive, brutal, and fair.</p>
+          <h2 class="text-3xl font-extrabold">Server Rules</h2>
+          <p class="text-slate-400 text-sm">Essential boundaries to keep the hardcore economy competitive and fair.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex gap-4 items-start p-5 rounded-2xl bg-surface/80 border border-white/5 hover:border-accent/40 transition duration-300">
-            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center shadow-lg shadow-accent/20">01</span>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-white/5">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center">01</span>
             <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Zero Tolerance Cheats:</strong> Hacked clients, X-ray modifications, and automated tools result in an immediate permanent ban.</p>
           </div>
-          <div class="flex gap-4 items-start p-5 rounded-2xl bg-surface/80 border border-white/5 hover:border-accent/40 transition duration-300">
-            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center shadow-lg shadow-accent/20">02</span>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-white/5">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center">02</span>
             <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Glitch Exploits:</strong> Duplication bugs and system exploits must be reported instantly; usage equals a permanent block.</p>
           </div>
-          <div class="flex gap-4 items-start p-5 rounded-2xl bg-surface/80 border border-white/5 hover:border-accent/40 transition duration-300">
-            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center shadow-lg shadow-accent/20">03</span>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-white/5">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center">03</span>
             <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">No Real Money Trades:</strong> Selling items or accounts outside the approved official store is entirely prohibited.</p>
           </div>
-          <div class="flex gap-4 items-start p-5 rounded-2xl bg-surface/80 border border-white/5 hover:border-accent/40 transition duration-300">
-            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center shadow-lg shadow-accent/20">04</span>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-white/5">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center">04</span>
             <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Scamming Allowed:</strong> Trade scams are fair game. Always verify transactions carefully before confirming trades.</p>
           </div>
-          <div class="flex gap-4 items-start p-5 rounded-2xl bg-surface/80 border border-white/5 hover:border-accent/40 transition duration-300">
-            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center shadow-lg shadow-accent/20">05</span>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-white/5">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center">05</span>
             <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Raids & PvP:</strong> Raiding, base looting, and PvP outside protected zone markers are built-in features, not griefing.</p>
           </div>
-          <div class="flex gap-4 items-start p-5 rounded-2xl bg-surface/80 border border-white/5 hover:border-accent/40 transition duration-300">
-            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center shadow-lg shadow-accent/20">06</span>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-white/5">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center">06</span>
             <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">No Alt Farming Bots:</strong> Automated accounts designed to farm currency or resources unfairly will be stripped and banned.</p>
           </div>
-          <div class="flex gap-4 items-start p-5 rounded-2xl bg-surface/80 border border-white/5 hover:border-accent/40 transition duration-300">
-            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center shadow-lg shadow-accent/20">07</span>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-white/5">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center">07</span>
             <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Market Freedom:</strong> Auction flipping, cornering items, and bulk market manipulations are legal business tactics.</p>
           </div>
-          <div class="flex gap-4 items-start p-5 rounded-2xl bg-surface/80 border border-white/5 hover:border-accent/40 transition duration-300">
-            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center shadow-lg shadow-accent/20">08</span>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-white/5">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-accent text-slate-950 font-mono font-bold text-xs flex items-center justify-center">08</span>
             <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Respectful Chat:</strong> Hate speech, severe harassment, and doxxing are strictly banned with zero exceptions.</p>
           </div>
         </div>
@@ -266,31 +218,31 @@
 
     <!-- Connect / Join Section -->
     <section id="connect" class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
         <span class="text-xs font-mono tracking-widest text-accent uppercase font-bold">Quick Start</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">How to Join</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">How to Join</h2>
         <p class="text-slate-400">Four easy steps to jump straight into your new survival expedition.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="glass-card-supreme p-8 rounded-3xl relative overflow-hidden group">
-          <div class="text-accent/15 font-mono font-extrabold text-7xl absolute -right-2 -bottom-4 group-hover:text-accent/30 transition duration-300">01</div>
-          <h4 class="font-bold text-lg mb-3 relative z-10">Launch Minecraft</h4>
+        <div class="card-fast p-8 rounded-3xl relative overflow-hidden">
+          <div class="text-accent/20 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2">01</div>
+          <h4 class="font-bold text-lg mb-2 relative z-10">Launch Minecraft</h4>
           <p class="text-slate-400 text-sm relative z-10 leading-relaxed">Open Java Edition on the latest game version build.</p>
         </div>
-        <div class="glass-card-supreme p-8 rounded-3xl relative overflow-hidden group">
-          <div class="text-accent/15 font-mono font-extrabold text-7xl absolute -right-2 -bottom-4 group-hover:text-accent/30 transition duration-300">02</div>
-          <h4 class="font-bold text-lg mb-3 relative z-10">Multiplayer Menu</h4>
+        <div class="card-fast p-8 rounded-3xl relative overflow-hidden">
+          <div class="text-accent/20 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2">02</div>
+          <h4 class="font-bold text-lg mb-2 relative z-10">Multiplayer Menu</h4>
           <p class="text-slate-400 text-sm relative z-10 leading-relaxed">Navigate to server selection and click "Add Server".</p>
         </div>
-        <div class="glass-card-supreme p-8 rounded-3xl relative overflow-hidden group">
-          <div class="text-accent/15 font-mono font-extrabold text-7xl absolute -right-2 -bottom-4 group-hover:text-accent/30 transition duration-300">03</div>
-          <h4 class="font-bold text-lg mb-3 relative z-10">Enter Address</h4>
+        <div class="card-fast p-8 rounded-3xl relative overflow-hidden">
+          <div class="text-accent/20 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2">03</div>
+          <h4 class="font-bold text-lg mb-2 relative z-10">Enter Address</h4>
           <p class="text-slate-400 text-sm relative z-10 leading-relaxed">Paste <code class="text-accent font-mono font-bold">play.gloresmp.example</code> into the slot.</p>
         </div>
-        <div class="glass-card-supreme p-8 rounded-3xl relative overflow-hidden group">
-          <div class="text-accent/15 font-mono font-extrabold text-7xl absolute -right-2 -bottom-4 group-hover:text-accent/30 transition duration-300">04</div>
-          <h4 class="font-bold text-lg mb-3 relative z-10">Join & Play</h4>
+        <div class="card-fast p-8 rounded-3xl relative overflow-hidden">
+          <div class="text-accent/20 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2">04</div>
+          <h4 class="font-bold text-lg mb-2 relative z-10">Join & Play</h4>
           <p class="text-slate-400 text-sm relative z-10 leading-relaxed">Save the profile, connect, and jump right into the action!</p>
         </div>
       </div>
@@ -299,7 +251,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/5 bg-surface/60 py-12 relative z-10">
+  <footer class="border-t border-white/5 bg-surface py-12">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="text-slate-500 text-xs">
         © 2026 GloreSMP. Not officially affiliated with Mojang or Microsoft.
