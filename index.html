@@ -104,7 +104,7 @@
 
   <!-- ==================== HOME PAGE ==================== -->
   <div id="page-home" class="page-view active pt-20">
-    <!-- Hero Section s logem uprostřed nahoře a countdownem přímo pod tím -->
+    <!-- Hero Section -->
     <header class="relative pt-16 pb-28 md:pt-24 md:pb-36 w-full px-6 md:px-16 overflow-hidden">
       <div class="w-full max-w-4xl mx-auto flex flex-col items-center text-center space-y-8">
         
@@ -113,7 +113,7 @@
           <img src="logo.png" alt="GloreSMP Logo" class="w-32 sm:w-40 lg:w-48 h-auto object-contain animate-float drop-shadow-[0_20px_40px_rgba(255,85,0,0.6)]">
         </div>
 
-        <!-- Countdown Widget Card přímo pod logem -->
+        <!-- Countdown Widget Card -->
         <div class="w-full max-w-xl flex flex-col items-center">
           <div class="w-full fire-box px-6 py-5 rounded-2xl shadow-xl space-y-3">
             <div class="text-[11px] font-mono tracking-widest text-fireYellow uppercase font-bold">Server Launch Countdown (August 20)</div>
@@ -142,7 +142,7 @@
         <div class="space-y-4 max-w-2xl pt-2">
           <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-fireRed/20 border border-fireRed/50 text-fireYellow text-xs font-bold tracking-wide uppercase shadow-lg shadow-fireRed/10">
             <span class="w-2 h-2 rounded-full bg-fireYellow animate-ping"></span>
-            Opening Soon • No Lag
+            Launching Soon • Prepare Your Team
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
@@ -279,7 +279,7 @@
         <p class="text-orange-200/70 text-sm">Copy the server address, launch Minecraft and jump into action!</p>
       </div>
 
-      <!-- IP Box s Copy tlačítkem (anglicky) -->
+      <!-- IP Box s Copy tlačítkem -->
       <div class="bg-pitchBlack/80 border border-fireOrange/40 p-4 sm:p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-inner w-full relative z-10">
         <div class="text-center sm:text-left">
           <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase font-semibold">Server IP Address</div>
@@ -290,7 +290,7 @@
         </button>
       </div>
 
-      <!-- Rychlé pokyny v bodech (anglicky) -->
+      <!-- Rychlé pokyny v bodech -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left pt-2 w-full relative z-10">
         <div class="bg-pitchBlack/50 p-4 rounded-xl border border-fireOrange/20 space-y-1">
           <div class="text-fireYellow font-mono font-bold text-xs">1. Launch</div>
@@ -331,7 +331,7 @@
     </div>
   </footer>
 
-  <!-- Script for switching pages, countdown & copying IP -->
+  <!-- Script for switching pages, copying IP & Countdown -->
   <script>
     function switchPage(pageId) {
       document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
@@ -344,105 +344,56 @@
       }
     }
 
-    // Countdown do 20. srpna (August 20) aktuálního roku (2026)
-    const launchDate = new Date('August 20, 2026 00:00:00').getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-      if (distance < 0) {
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor```html
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GloreSMP — Survival Economy</title>
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-<link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap)" rel="stylesheet">
-<script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        colors: {
-          pitchBlack: '#000000',
-          darkBg: '#050201',
-          surface: '#0c0503',
-          surfaceAlt: '#140804',
-          fireOrange: '#ff5500',
-          fireYellow: '#ffcc00',
-          fireRed: '#ff1100',
-        },
-        fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          mono: ['"JetBrains Mono"', 'monospace'],
-        },
-        animation: {
-          'float': 'float 6s ease-in-out infinite',
-        },
-        keyframes: {
-          float: {
-            '0%, 100%': { transform: 'translateY(0)' },
-            '50%': { transform: 'translateY(-10px)' },
-          }
+    const ipText = 'GloreSMP.bagelhosting.net';
+    
+    // Copy button on Join Page
+    const copyBtnJoin = document.getElementById('copy-ip-btn-join');
+    if(copyBtnJoin) {
+      copyBtnJoin.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(ipText);
+          const originalText = copyBtnJoin.textContent;
+          copyBtnJoin.textContent = 'COPIED!';
+          copyBtnJoin.classList.add('ultimate-copied');
+          setTimeout(() => {
+            copyBtnJoin.textContent = originalText;
+            copyBtnJoin.classList.remove('ultimate-copied');
+          }, 1600);
+        } catch (e) {
+          copyBtnJoin.textContent = 'COPIED!';
         }
-      }
+      });
     }
-  }
-</script>
-<style>
-  .fire-box {
-    background: linear-gradient(145deg, #120703 0%, #050201 100%);
-    border: 1px solid rgba(255, 85, 0, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 204, 0, 0.1);
-  }
-  .fire-box:hover {
-    border-color: rgba(255, 204, 0, 0.6);
-    box-shadow: 0 15px 40px rgba(255, 85, 0, 0.25), inset 0 1px 0 rgba(255, 204, 0, 0.2);
-    transform: translateY(-4px);
-  }
 
-  @keyframes ultimateFireCopy {
-    0% { transform: scale(1); }
-    30% { transform: scale(1.08); background: linear-gradient(135deg, #ff1100, #ff5500, #ffcc00); color: #000000; border-color: #ffcc00; box-shadow: 0 0 35px rgba(255, 85, 0, 0.9); font-weight: 800; }
-    100% { transform: scale(1); }
-  }
-  .ultimate-copied {
-    animation: ultimateFireCopy 0.5s ease forwards;
-  }
+    // Opravený odpočet do 20. srpna
+    function updateCountdown() {
+      const now = new Date();
+      let year = now.getFullYear();
+      
+      // Cílové datum: 20. srpen (měsíc 7 je srpen) v 00:00:00
+      let targetDate = new Date(year, 7, 20, 0, 0, 0);
+      
+      // Pokud už 20. srpen letos proběhl, počítej odpočet na příští rok
+      if (now.getTime() > targetDate.getTime()) {
+        targetDate = new Date(year + 1, 7, 20, 0, 0, 0);
+      }
 
-  .page-view {
-    display: none;
-  }
-  .page-view.active {
-    display: block;
-  }
-</style>
-</head>
-<body class="bg-pitchBlack text-orange-100 font-sans antialiased selection:bg-fireOrange selection:text-black min-h-screen overflow-x-hidden w-full m-0 p-0 flex flex-col justify-between">
+      const diff = targetDate.getTime() - now.getTime();
 
-  <!-- Ohnivé záře přes celou obrazovku -->
-  <div class="absolute top-0 left-0 w-full h-[800px] bg-gradient-to-b from-fireOrange/20 via-fireRed/10 to-transparent pointer-events-none -z-10"></div>
-  <div class="absolute top-[15%] left-[5%] w-[600px] h-[600px] bg-fireYellow/5 rounded-full blur-[180px] pointer-events-none -z-10"></div>
-  <div class="absolute top-[25%] right-[5%] w-[600px] h-[600px] bg-fireOrange/10 rounded-full blur-[180px] pointer-events-none -z-10"></div>
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-  <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 fire-box border-b border-fireOrange/30 w-full rounded-none">
-    <div class="w-full px-8 h-20 flex items-center justify-between">
-      <a href="#" onclick="switchPage('home'); return false;" class="flex items-center gap-3.5 group cursor-pointer">
-        <img src="logo.png" alt="GloreSMP Logo" class="h-11 w-11 object-contain rounded-xl bg-pitchBlack p-1 border border-fireOrange/50">
+      document.getElementById('days').textContent = String(Math.max(0, days)).padStart(2, '0');
+      document.getElementById('hours').textContent = String(Math.max(0, hours)).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(Math.max(0, minutes)).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(Math.max(0, seconds)).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
