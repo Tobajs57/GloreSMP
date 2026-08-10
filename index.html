@@ -15,12 +15,13 @@
     theme: {
       extend: {
         colors: {
-          darkBg: '#080504',
-          surface: '#120a07',
-          surfaceAlt: '#1a100a',
-          accentOrange: '#ff6b00',
-          accentYellow: '#fbbf24',
-          accentRed: '#ef4444',
+          pitchBlack: '#000000',
+          darkBg: '#050201',
+          surface: '#0c0503',
+          surfaceAlt: '#140804',
+          fireOrange: '#ff5500',
+          fireYellow: '#ffcc00',
+          fireRed: '#ff1100',
         },
         fontFamily: {
           sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -40,58 +41,53 @@
   }
 </script>
 <style>
-  /* Optimalizovaný design s ohnivým černým, oranžovým, žlutým a červeným nádechem */
-  .glass-fire {
-    background: linear-gradient(135deg, rgba(26, 16, 10, 0.85) 0%, rgba(18, 10, 7, 0.95) 100%);
-    border: 1px solid rgba(255, 107, 0, 0.2);
+  /* 100% čistá černá s ohnivou oranžovou, žlutou a červenou */
+  .fire-box {
+    background: linear-gradient(145deg, #120703 0%, #050201 100%);
+    border: 1px solid rgba(255, 85, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 204, 0, 0.1);
   }
-  .card-fire {
-    background: linear-gradient(145deg, rgba(24, 14, 9, 0.8) 100%, rgba(15, 8, 5, 0.9));
-    border: 1px solid rgba(255, 107, 0, 0.12);
-    transition: all 0.25s ease;
-  }
-  .card-fire:hover {
-    border-color: rgba(251, 191, 36, 0.6);
-    box-shadow: 0 10px 30px -5px rgba(255, 107, 0, 0.25);
+  .fire-box:hover {
+    border-color: rgba(255, 204, 0, 0.6);
+    box-shadow: 0 15px 40px rgba(255, 85, 0, 0.25), inset 0 1px 0 rgba(255, 204, 0, 0.2);
     transform: translateY(-4px);
   }
 
-  /* Efektní animace úspěšného zkopírování IP adresy v ohnivém stylu */
-  @keyframes fireCopy {
+  @keyframes ultimateFireCopy {
     0% { transform: scale(1); }
-    40% { transform: scale(1.08); background: linear-gradient(135deg, #ef4444, #f59e0b); color: #ffffff; border-color: #fbbf24; box-shadow: 0 0 25px rgba(239, 68, 68, 0.6); }
+    30% { transform: scale(1.08); background: linear-gradient(135deg, #ff1100, #ff5500, #ffcc00); color: #000000; border-color: #ffcc00; box-shadow: 0 0 35px rgba(255, 85, 0, 0.9); font-weight: 800; }
     100% { transform: scale(1); }
   }
-  .fire-copied {
-    animation: fireCopy 0.5s ease forwards;
+  .ultimate-copied {
+    animation: ultimateFireCopy 0.5s ease forwards;
   }
 </style>
 </head>
-<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-accentOrange selection:text-white min-h-screen overflow-x-hidden">
+<body class="bg-pitchBlack text-orange-100 font-sans antialiased selection:bg-fireOrange selection:text-black min-h-screen overflow-x-hidden">
 
-  <!-- Ohnivé pozadí s přechody žluté, oranžové a červené -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-gradient-to-b from-accentOrange/10 via-accentRed/5 to-transparent pointer-events-none -z-10"></div>
-  <div class="absolute top-[-10%] right-[10%] w-[400px] h-[400px] bg-accentYellow/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+  <!-- Ohnivé záře na absolutně černém pozadí -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[700px] bg-gradient-to-b from-fireOrange/15 via-fireRed/10 to-transparent pointer-events-none -z-10"></div>
+  <div class="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-fireYellow/5 rounded-full blur-[150px] pointer-events-none -z-10"></div>
 
   <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass-fire border-b border-accentOrange/20">
+  <nav class="fixed top-0 left-0 right-0 z-50 fire-box border-b border-fireOrange/30">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3.5 group">
-        <img src="logo.png" alt="GloreSMP Logo" class="h-11 w-11 object-contain rounded-xl bg-surface p-1 border border-accentOrange/30">
+        <img src="logo.png" alt="GloreSMP Logo" class="h-11 w-11 object-contain rounded-xl bg-pitchBlack p-1 border border-fireOrange/50">
         <div class="flex flex-col">
           <span class="font-extrabold text-lg tracking-tight text-white">GloreSMP</span>
-          <span class="text-[10px] font-mono tracking-widest bg-gradient-to-r from-accentYellow via-accentOrange to-accentRed bg-clip-text text-transparent uppercase font-bold">Survival Economy</span>
+          <span class="text-[10px] font-mono tracking-widest bg-gradient-to-r from-fireYellow via-fireOrange to-fireRed bg-clip-text text-transparent uppercase font-bold">Survival Economy</span>
         </div>
       </a>
 
-      <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-300">
-        <a href="#features" class="hover:text-accentYellow transition duration-200">Features</a>
-        <a href="#rules" class="hover:text-accentYellow transition duration-200">Rules</a>
-        <a href="#connect" class="hover:text-accentYellow transition duration-200">How to Join</a>
+      <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-orange-200/80">
+        <a href="#features" class="hover:text-fireYellow transition duration-200">Features</a>
+        <a href="#rules" class="hover:text-fireYellow transition duration-200">Rules</a>
+        <a href="#connect" class="hover:text-fireYellow transition duration-200">How to Join</a>
       </div>
 
       <div class="flex items-center gap-4">
-        <a href="#connect" class="inline-flex items-center justify-center font-bold text-xs uppercase tracking-wider bg-accentOrange/20 border border-accentOrange/50 text-accentYellow px-5 py-2.5 rounded-xl hover:bg-accentOrange hover:text-white transition-all duration-200">
+        <a href="#connect" class="inline-flex items-center justify-center font-bold text-xs uppercase tracking-wider bg-fireOrange/20 border border-fireOrange/60 text-fireYellow px-5 py-2.5 rounded-xl hover:bg-gradient-to-r hover:from-fireOrange hover:to-fireRed hover:text-black hover:font-extrabold transition-all duration-200">
           Play Now
         </a>
       </div>
@@ -103,27 +99,27 @@
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-accentRed/10 border border-accentRed/30 text-accentYellow text-xs font-bold tracking-wide uppercase">
-          <span class="w-2 h-2 rounded-full bg-accentRed animate-pulse"></span>
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-fireRed/20 border border-fireRed/50 text-fireYellow text-xs font-bold tracking-wide uppercase shadow-lg shadow-fireRed/10">
+          <span class="w-2 h-2 rounded-full bg-fireYellow animate-ping"></span>
           Server Online • No Lag
         </div>
 
         <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-          Survival <span class="bg-gradient-to-r from-accentYellow via-accentOrange to-accentRed bg-clip-text text-transparent">Economy</span>
+          Survival <span class="bg-gradient-to-r from-fireYellow via-fireOrange to-fireRed bg-clip-text text-transparent">Economy</span>
         </h1>
 
-        <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+        <p class="text-lg text-orange-200/70 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
           Step into the ultimate hardcore sandbox environment. Form indestructible alliances, manipulate high-tier player markets, build colossal fortresses, and rise to absolute supremacy.
         </p>
 
         <!-- IP Copy Widget Card -->
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-          <div class="w-full sm:w-auto flex items-center justify-between gap-6 glass-fire px-6 py-4 rounded-2xl border-accentOrange/30">
+          <div class="w-full sm:w-auto flex items-center justify-between gap-6 fire-box px-6 py-4 rounded-2xl">
             <div class="text-left">
-              <div class="text-[10px] font-mono tracking-widest text-accentYellow uppercase">Server Address</div>
+              <div class="text-[10px] font-mono tracking-widest text-fireYellow uppercase">Server Address</div>
               <div id="server-ip" class="text-base font-mono font-bold text-white">play.gloresmp.example</div>
             </div>
-            <button id="copy-ip-btn" type="button" class="bg-accentOrange/20 hover:bg-gradient-to-r hover:from-accentOrange hover:to-accentRed text-accentYellow hover:text-white font-mono font-bold text-xs uppercase tracking-wider px-4.5 py-3 rounded-xl border border-accentOrange/40 transition-all duration-200">
+            <button id="copy-ip-btn" type="button" class="bg-fireOrange/20 hover:bg-gradient-to-r hover:from-fireYellow hover:via-fireOrange hover:to-fireRed text-fireYellow hover:text-black font-mono font-bold text-xs uppercase tracking-wider px-4.5 py-3 rounded-xl border border-fireOrange/50 transition-all duration-200 shadow-md">
               Copy IP
             </button>
           </div>
@@ -131,7 +127,7 @@
       </div>
 
       <div class="lg:col-span-5 flex justify-center relative">
-        <img src="logo.png" alt="GloreSMP Logo" class="w-72 sm:w-80 lg:w-96 h-auto object-contain animate-float drop-shadow-[0_15px_30px_rgba(255,107,0,0.3)]">
+        <img src="logo.png" alt="GloreSMP Logo" class="w-72 sm:w-80 lg:w-96 h-auto object-contain animate-float drop-shadow-[0_20px_40px_rgba(255,85,0,0.5)]">
       </div>
 
     </div>
@@ -143,92 +139,92 @@
     <!-- Features Section -->
     <section id="features" class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-mono tracking-widest text-accentYellow uppercase font-bold">Features</span>
+        <span class="text-xs font-mono tracking-widest text-fireYellow uppercase font-bold">Features</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Core Mechanics</h2>
-        <p class="text-slate-300">Engineered with precision for peak performance and absolute competitive balance.</p>
+        <p class="text-orange-200/70">Engineered with precision for peak performance and absolute competitive balance.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Feature 1 -->
-        <div class="card-fire p-8 rounded-3xl space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-2xl">💰</div>
+        <div class="fire-box p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-fireOrange/15 border border-fireOrange/40 flex items-center justify-center text-2xl shadow-inner">💰</div>
           <h3 class="text-xl font-bold text-white">Auction House</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Trade rare collectibles safely and monitor live market valuations in real-time liquidity pools.</p>
+          <p class="text-orange-200/70 text-sm leading-relaxed">Trade rare collectibles safely and monitor live market valuations in real-time liquidity pools.</p>
         </div>
         <!-- Feature 2 -->
-        <div class="card-fire p-8 rounded-3xl space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-2xl">🏪</div>
+        <div class="fire-box p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-fireOrange/15 border border-fireOrange/40 flex items-center justify-center text-2xl shadow-inner">🏪</div>
           <h3 class="text-xl font-bold text-white">Shops & Orders</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Establish your corporate footprint with specialized player-run storefronts and direct contracts.</p>
+          <p class="text-orange-200/70 text-sm leading-relaxed">Establish your corporate footprint with specialized player-run storefronts and direct contracts.</p>
         </div>
         <!-- Feature 3 -->
-        <div class="card-fire p-8 rounded-3xl space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-2xl">🧭</div>
+        <div class="fire-box p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-fireOrange/15 border border-fireOrange/40 flex items-center justify-center text-2xl shadow-inner">🧭</div>
           <h3 class="text-xl font-bold text-white">RTP & Teleports</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Instantly escape crowded zones into completely untouched wilderness with random teleport systems.</p>
+          <p class="text-orange-200/70 text-sm leading-relaxed">Instantly escape crowded zones into completely untouched wilderness with random teleport systems.</p>
         </div>
         <!-- Feature 4 -->
-        <div class="card-fire p-8 rounded-3xl space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-2xl">🏆</div>
+        <div class="fire-box p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-fireOrange/15 border border-fireOrange/40 flex items-center justify-center text-2xl shadow-inner">🏆</div>
           <h3 class="text-xl font-bold text-white">Global Leaderboards</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Compete across net worth, combat statistics, resource acquisition, and prestige milestones.</p>
+          <p class="text-orange-200/70 text-sm leading-relaxed">Compete across net worth, combat statistics, resource acquisition, and prestige milestones.</p>
         </div>
         <!-- Feature 5 -->
-        <div class="card-fire p-8 rounded-3xl space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-2xl">🤝</div>
+        <div class="fire-box p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-fireOrange/15 border border-fireOrange/40 flex items-center justify-center text-2xl shadow-inner">🤝</div>
           <h3 class="text-xl font-bold text-white">Factions & Teams</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Forge powerful alliances, construct massive shared fortresses, and defend your territory as a crew.</p>
+          <p class="text-orange-200/70 text-sm leading-relaxed">Forge powerful alliances, construct massive shared fortresses, and defend your territory as a crew.</p>
         </div>
         <!-- Feature 6 -->
-        <div class="card-fire p-8 rounded-3xl space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-2xl">🏠</div>
+        <div class="fire-box p-8 rounded-3xl space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-fireOrange/15 border border-fireOrange/40 flex items-center justify-center text-2xl shadow-inner">🏠</div>
           <h3 class="text-xl font-bold text-white">Advanced Homes</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Configure multiple secure personal home points and navigate your property network instantly.</p>
+          <p class="text-orange-200/70 text-sm leading-relaxed">Configure multiple secure personal home points and navigate your property network instantly.</p>
         </div>
       </div>
     </section>
 
     <!-- Rules Section -->
     <section id="rules" class="max-w-5xl mx-auto px-6">
-      <div class="glass-fire p-8 sm:p-12 rounded-3xl border border-accentOrange/25">
+      <div class="fire-box p-8 sm:p-12 rounded-3xl">
         <div class="mb-10 space-y-2">
-          <span class="text-xs font-mono tracking-widest text-accentYellow uppercase font-bold">Clear Code</span>
+          <span class="text-xs font-mono tracking-widest text-fireYellow uppercase font-bold">Clear Code</span>
           <h2 class="text-3xl font-extrabold text-white">Server Rules</h2>
-          <p class="text-slate-300 text-sm">Essential boundaries to keep the hardcore economy competitive and fair.</p>
+          <p class="text-orange-200/70 text-sm">Essential boundaries to keep the hardcore economy competitive and fair.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-accentOrange/15">
-            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-accentOrange to-accentRed text-white font-mono font-bold text-xs flex items-center justify-center">01</span>
-            <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Zero Tolerance Cheats:</strong> Hacked clients, X-ray modifications, and automated tools result in an immediate permanent ban.</p>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-pitchBlack border border-fireOrange/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-fireRed to-fireOrange text-black font-mono font-extrabold text-xs flex items-center justify-center shadow-md">01</span>
+            <p class="text-sm text-orange-100/90 leading-relaxed"><strong class="text-white">Zero Tolerance Cheats:</strong> Hacked clients, X-ray modifications, and automated tools result in an immediate permanent ban.</p>
           </div>
-          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-accentOrange/15">
-            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-accentOrange to-accentRed text-white font-mono font-bold text-xs flex items-center justify-center">02</span>
-            <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Glitch Exploits:</strong> Duplication bugs and system exploits must be reported instantly; usage equals a permanent block.</p>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-pitchBlack border border-fireOrange/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-fireRed to-fireOrange text-black font-mono font-extrabold text-xs flex items-center justify-center shadow-md">02</span>
+            <p class="text-sm text-orange-100/90 leading-relaxed"><strong class="text-white">Glitch Exploits:</strong> Duplication bugs and system exploits must be reported instantly; usage equals a permanent block.</p>
           </div>
-          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-accentOrange/15">
-            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-accentOrange to-accentRed text-white font-mono font-bold text-xs flex items-center justify-center">03</span>
-            <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">No Real Money Trades:</strong> Selling items or accounts outside the approved official store is entirely prohibited.</p>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-pitchBlack border border-fireOrange/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-fireRed to-fireOrange text-black font-mono font-extrabold text-xs flex items-center justify-center shadow-md">03</span>
+            <p class="text-sm text-orange-100/90 leading-relaxed"><strong class="text-white">No Real Money Trades:</strong> Selling items or accounts outside the approved official store is entirely prohibited.</p>
           </div>
-          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-accentOrange/15">
-            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-accentOrange to-accentRed text-white font-mono font-bold text-xs flex items-center justify-center">04</span>
-            <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Scamming Allowed:</strong> Trade scams are fair game. Always verify transactions carefully before confirming trades.</p>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-pitchBlack border border-fireOrange/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-fireRed to-fireOrange text-black font-mono font-extrabold text-xs flex items-center justify-center shadow-md">04</span>
+            <p class="text-sm text-orange-100/90 leading-relaxed"><strong class="text-white">Scamming Allowed:</strong> Trade scams are fair game. Always verify transactions carefully before confirming trades.</p>
           </div>
-          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-accentOrange/15">
-            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-accentOrange to-accentRed text-white font-mono font-bold text-xs flex items-center justify-center">05</span>
-            <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Raids & PvP:</strong> Raiding, base looting, and PvP outside protected zone markers are built-in features, not griefing.</p>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-pitchBlack border border-fireOrange/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-fireRed to-fireOrange text-black font-mono font-extrabold text-xs flex items-center justify-center shadow-md">05</span>
+            <p class="text-sm text-orange-100/90 leading-relaxed"><strong class="text-white">Raids & PvP:</strong> Raiding, base looting, and PvP outside protected zone markers are built-in features, not griefing.</p>
           </div>
-          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-accentOrange/15">
-            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-accentOrange to-accentRed text-white font-mono font-bold text-xs flex items-center justify-center">06</span>
-            <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">No Alt Farming Bots:</strong> Automated accounts designed to farm currency or resources unfairly will be stripped and banned.</p>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-pitchBlack border border-fireOrange/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-fireRed to-fireOrange text-black font-mono font-extrabold text-xs flex items-center justify-center shadow-md">06</span>
+            <p class="text-sm text-orange-100/90 leading-relaxed"><strong class="text-white">No Alt Farming Bots:</strong> Automated accounts designed to farm currency or resources unfairly will be stripped and banned.</p>
           </div>
-          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-accentOrange/15">
-            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-accentOrange to-accentRed text-white font-mono font-bold text-xs flex items-center justify-center">07</span>
-            <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Market Freedom:</strong> Auction flipping, cornering items, and bulk market manipulations are legal business tactics.</p>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-pitchBlack border border-fireOrange/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-fireRed to-fireOrange text-black font-mono font-extrabold text-xs flex items-center justify-center shadow-md">07</span>
+            <p class="text-sm text-orange-100/90 leading-relaxed"><strong class="text-white">Market Freedom:</strong> Auction flipping, cornering items, and bulk market manipulations are legal business tactics.</p>
           </div>
-          <div class="flex gap-4 items-start p-4 rounded-2xl bg-surface border border-accentOrange/15">
-            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-accentOrange to-accentRed text-white font-mono font-bold text-xs flex items-center justify-center">08</span>
-            <p class="text-sm text-slate-300 leading-relaxed"><strong class="text-white">Respectful Chat:</strong> Hate speech, severe harassment, and doxxing are strictly banned with zero exceptions.</p>
+          <div class="flex gap-4 items-start p-4 rounded-2xl bg-pitchBlack border border-fireOrange/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-fireRed to-fireOrange text-black font-mono font-extrabold text-xs flex items-center justify-center shadow-md">08</span>
+            <p class="text-sm text-orange-100/90 leading-relaxed"><strong class="text-white">Respectful Chat:</strong> Hate speech, severe harassment, and doxxing are strictly banned with zero exceptions.</p>
           </div>
         </div>
       </div>
@@ -237,31 +233,31 @@
     <!-- Connect / Join Section -->
     <section id="connect" class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-mono tracking-widest text-accentYellow uppercase font-bold">Quick Start</span>
+        <span class="text-xs font-mono tracking-widest text-fireYellow uppercase font-bold">Quick Start</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">How to Join</h2>
-        <p class="text-slate-300">Four easy steps to jump straight into your new survival expedition.</p>
+        <p class="text-orange-200/70">Four easy steps to jump straight into your new survival expedition.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card-fire p-8 rounded-3xl relative overflow-hidden">
-          <div class="text-accentOrange/10 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2 pointer-events-none">01</div>
+        <div class="fire-box p-8 rounded-3xl relative overflow-hidden">
+          <div class="text-fireOrange/10 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2 pointer-events-none">01</div>
           <h4 class="font-bold text-lg text-white mb-2 relative z-10">Launch Minecraft</h4>
-          <p class="text-slate-300 text-sm relative z-10 leading-relaxed">Open Java Edition on the latest game version build.</p>
+          <p class="text-orange-200/70 text-sm relative z-10 leading-relaxed">Open Java Edition on the latest game version build.</p>
         </div>
-        <div class="card-fire p-8 rounded-3xl relative overflow-hidden">
-          <div class="text-accentOrange/10 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2 pointer-events-none">02</div>
+        <div class="fire-box p-8 rounded-3xl relative overflow-hidden">
+          <div class="text-fireOrange/10 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2 pointer-events-none">02</div>
           <h4 class="font-bold text-lg text-white mb-2 relative z-10">Multiplayer Menu</h4>
-          <p class="text-slate-300 text-sm relative z-10 leading-relaxed">Navigate to server selection and click "Add Server".</p>
+          <p class="text-orange-200/70 text-sm relative z-10 leading-relaxed">Navigate to server selection and click "Add Server".</p>
         </div>
-        <div class="card-fire p-8 rounded-3xl relative overflow-hidden">
-          <div class="text-accentOrange/10 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2 pointer-events-none">03</div>
+        <div class="fire-box p-8 rounded-3xl relative overflow-hidden">
+          <div class="text-fireOrange/10 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2 pointer-events-none">03</div>
           <h4 class="font-bold text-lg text-white mb-2 relative z-10">Enter Address</h4>
-          <p class="text-slate-300 text-sm relative z-10 leading-relaxed">Paste <code class="text-accentYellow font-mono font-bold">play.gloresmp.example</code> into the slot.</p>
+          <p class="text-orange-200/70 text-sm relative z-10 leading-relaxed">Paste <code class="text-fireYellow font-mono font-bold">play.gloresmp.example</code> into the slot.</p>
         </div>
-        <div class="card-fire p-8 rounded-3xl relative overflow-hidden">
-          <div class="text-accentOrange/10 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2 pointer-events-none">04</div>
+        <div class="fire-box p-8 rounded-3xl relative overflow-hidden">
+          <div class="text-fireOrange/10 font-mono font-extrabold text-6xl absolute -right-2 -bottom-2 pointer-events-none">04</div>
           <h4 class="font-bold text-lg text-white mb-2 relative z-10">Join & Play</h4>
-          <p class="text-slate-300 text-sm relative z-10 leading-relaxed">Save the profile, connect, and jump right into the action!</p>
+          <p class="text-orange-200/70 text-sm relative z-10 leading-relaxed">Save the profile, connect, and jump right into the action!</p>
         </div>
       </div>
     </section>
@@ -269,20 +265,20 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-accentOrange/20 bg-surface py-12">
+  <footer class="border-t border-fireOrange/30 bg-pitchBlack py-12">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="text-slate-400 text-xs">
+      <div class="text-orange-200/40 text-xs">
         © 2026 GloreSMP. Not officially affiliated with Mojang or Microsoft.
       </div>
-      <div class="flex items-center gap-6 font-semibold text-xs text-slate-300 uppercase tracking-wider">
-        <a href="#" class="hover:text-accentYellow transition duration-200">Discord</a>
-        <a href="#" class="hover:text-accentYellow transition duration-200">Store</a>
-        <a href="#rules" class="hover:text-accentYellow transition duration-200">Rules</a>
+      <div class="flex items-center gap-6 font-semibold text-xs text-orange-200/70 uppercase tracking-wider">
+        <a href="#" class="hover:text-fireYellow transition duration-200">Discord</a>
+        <a href="#" class="hover:text-fireYellow transition duration-200">Store</a>
+        <a href="#rules" class="hover:text-fireYellow transition duration-200">Rules</a>
       </div>
     </div>
   </footer>
 
-  <!-- Script for copying IP with special fire effect -->
+  <!-- Script for copying IP with ultimate fire animation -->
   <script>
     const ipText = document.getElementById('server-ip').textContent.trim();
     const copyBtn = document.getElementById('copy-ip-btn');
@@ -292,15 +288,15 @@
         await navigator.clipboard.writeText(ipText);
         const originalText = copyBtn.textContent;
         
-        copyBtn.textContent = 'Copied!';
-        copyBtn.classList.add('fire-copied');
+        copyBtn.textContent = 'COPIED!';
+        copyBtn.classList.add('ultimate-copied');
         
         setTimeout(() => {
           copyBtn.textContent = originalText;
-          copyBtn.classList.remove('fire-copied');
+          copyBtn.classList.remove('ultimate-copied');
         }, 1600);
       } catch (e) {
-        copyBtn.textContent = 'Error';
+        copyBtn.textContent = 'ERROR';
       }
     });
   </script>
